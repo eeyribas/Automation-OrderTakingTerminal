@@ -30,16 +30,8 @@ namespace AutomationOrderTakingTerminal
             serialPort.DataBits = 8;
             serialPort.StopBits = StopBits.One;
             serialPort.DataReceived += SerialPort_DataReceived;
-
-            try
-            {
-                serialPort.Open();
-                textBox3.Text = "";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            serialPort.Open();
+            textBox3.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
